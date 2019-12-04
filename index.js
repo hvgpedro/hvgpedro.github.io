@@ -13,12 +13,10 @@ var pokeName, // Nome ou numero passado na caixa de busca
 
 //Funções
 
-// Função para reduzir a escrita na captura de elementos HTML
+
 function getElement(element) {
   return document.querySelector(element);
 }
-
-// Função responsavel por fazer requisições para a API e inserir as respostas na variavel pokemon
 function requestPokeInfo(url, name) {
   fetch(url + name)
     .then(response => response.json())
@@ -28,7 +26,7 @@ function requestPokeInfo(url, name) {
     .catch(err => console.log(err));
 }
 
-// Função responsavel por montar o HTML exibido na pagina
+
 function createCard () {
   card = `
     <div class="pokemon-picture">
@@ -45,7 +43,7 @@ function createCard () {
   return card;
 }
 
-// Função que faz a chamada das principais funções e inicia o app
+
 function startApp(pokeName) {
   requestPokeInfo(baseUrl, pokeName);
 
